@@ -71,17 +71,34 @@ function fizzBuzz(numeros) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(texto) {
+  for (let c in texto) {
+
+  }
 }
 function decode() {
   // seu código aqui
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(techLista, name) {
+  let saida = [];
+  if (techLista.length === 0) {
+    return "Vazio!";
+  }
+  techLista.sort();
+  for (c in techLista) {
+    saida.push(
+      {
+        tech: techLista[c],
+        name: name
+      }
+    )
+  }
+  return saida;
 }
+
+
 
 module.exports = {
   calcArea,
