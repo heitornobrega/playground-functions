@@ -28,17 +28,35 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(valores) {
-  var max = 0;
-  for (let c in valores) {
-    if (valores[c] > max) {
-      max = valores[c];
-    } else {
-      max = max;
+  var maior = 0;
+  var listaMaior = [];
+  var absolutos = [];
+  if (valores[0] >= 0) {
+    for (c in valores) {
+      if (maior <= valores[c]) {
+        maior = valores[c];
+      }
     }
-    return max
+    for (c in valores) {
+      if (maior === valores[c]) {
+        listaMaior.push(maior);
+      }
+    }
+  } else {
+    for (c in valores) {
+      var convertido = Math.abs(valores[c]);
+      absolutos.push(convertido);
+    }
+    var m = Math.min(...absolutos)
+    for (c in absolutos) {
+      if (m === absolutos[c]) {
+        listaMaior.push(m);
+      };
+    };
   }
+  var quantia = listaMaior.length;
+  return quantia;
 }
-console.log(highestCount([0, 0, 3]));
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
