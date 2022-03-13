@@ -29,15 +29,19 @@ function triangleCheck(lineA, lineB, lineC) {
 
 // Desafio 13
 function hydrate(ingerido) {
-  var r = /\d+/;
-  var s = ingerido;
-  var numLis = [];
-  for(c in ingerido){
-    var cara = s.match(r)[c]
-    var num = parseInt(cara);
-    numLis.push(num)
+  let soma = 0;
+  let quantia = [];
+  for(let c in ingerido){
+    for(let i = 1; i <=10; i++){
+      if(ingerido[c] == i){
+        quantia.push(parseInt(ingerido[c]));
+      }
+    }
   }
-
+  for(let c in quantia){
+    soma += quantia[c];
+  }
+  return `${soma} copos de água`;
 }
 
 module.exports = {
