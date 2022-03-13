@@ -41,6 +41,9 @@ function hydrate(ingerido) {
   for(let c in quantia){
     soma += quantia[c];
   }
+  if(soma === 1){
+    return `${soma} copo de água`;
+  }
   return `${soma} copos de água`;
 }
 
