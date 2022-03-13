@@ -16,18 +16,15 @@ function generatePhoneNumber(numeros) {
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  var somaAB = lineA + lineB;
-  var somaAC = lineA + lineC;
-  var somaBC = lineB + lineC;
-  var difeAB = Math.abs(lineA - lineB);
-  var difeAC = Math.abs(lineA - lineC);
-  var difeBC = Math.abs(lineB - lineC);
-  var resultado = false;
-  if (lineA < somaBC && lineB < somaAC && lineC < somaAB
-    && lineA < difeBC && lineB < difeAC && lineC < difeAB) {
-    resultado = true;
-  }
-  return resultado;
+  if((lineA < (lineB + lineC)) && (lineA > Math.abs(lineB - lineC))){
+    return true;
+  }else if((lineB < (lineA + lineC)) && (lineB > Math.abs(lineA - lineC))){
+    return true;
+  }else if((lineC < (lineB + lineA)) && (lineC > Math.abs(lineB - lineA))){
+    return true;
+  }else{
+    return false;
+  }  
 }
 
 // Desafio 13
