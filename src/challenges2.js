@@ -1,17 +1,55 @@
 // Desafio 11
 function generatePhoneNumber(numeros) {
-  var resultado = "ok";
-  if(numeros.length !== 11){
-    resultado = "erro";
-  }else{
-    for(c in numeros){
-      if(numeros[c] < 0 && numeros[c] > 9){
-        
+  var teste = [];
+  var teste2 =[];
+  var teste3 = [];
+  var res = [];
+  
+  function getOccurrence(array, value) {
+    var count = 0;
+    var res = [];
+    array.forEach((v) => (v === value && count++));
+    res.push(value);
+    res.push(count);
+    return res;
+  }
+  for (c in numeros) {
+    teste.push(getOccurrence(numeros, numeros[c]));
+  }
+  for (c in teste){
+    for(i in teste[c]){
+      teste2.push(teste[c][i]);
+    }
+  }
+  for (c in teste2){
+    if(c % 2 !== 0){
+      teste3.push(teste2[c]);
+    }
+  }
+  for(c in teste3){
+    if(teste3[c] >= 3){
+        res.push(teste3[c]);
+    }
+}
+
+  if (numeros.length === 11) {
+    for (c in numeros) {
+      if (numeros[c] < 0) {
+        return "não é possível gerar um número de telefone com esses valores";
+      } else if (numeros[c] > 9) {
+        return "não é possível gerar um número de telefone com esses valores";
       }
     }
-    
+    if(res.length >= 3){
+      return "não é possível gerar um número de telefone com esses valores";
+    } else {
+      return `(${numeros[0]}${numeros[1]}) ${numeros[2]}${numeros[3]}${numeros[4]}${numeros[5]}${numeros[6]}-${numeros[7]}${numeros[8]}${numeros[9]}${numeros[10]}`
+
+    }
+  } else {
+    return "Array com tamanho incorreto."
   }
-  return resultado;
+
 }
 
 // Desafio 12
