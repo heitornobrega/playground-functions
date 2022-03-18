@@ -1,4 +1,4 @@
-// Desafio 1 
+// Desafio 1
 function compareTrue(v1, v2) {
   if (v1 === true && v2 === true) {
     return true;
@@ -13,7 +13,7 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(sentence) {
-  return sentence.split(" ");
+  return sentence.split(' ');
 }
 
 // Desafio 4
@@ -60,13 +60,13 @@ function highestCount(valores) {
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  var campeao = "";
+  let campeao = '';
   if (Math.abs((cat1 - mouse)) === Math.abs((cat2 - mouse))) {
-    campeao = "os gatos trombam e o rato foge";
+    campeao = 'os gatos trombam e o rato foge';
   } else if (Math.abs((cat1 - mouse)) < Math.abs((cat2 - mouse))) {
-    campeao = "cat1";
+    campeao = 'cat1';
   } else {
-    campeao = "cat2";
+    campeao = 'cat2';
   }
   return campeao;
 }
@@ -90,7 +90,7 @@ function fizzBuzz(numeros) {
 
 // Desafio 9
 function encode(texto) {
-  var vogais = ["a", "e", "i", "o", "u"]
+  let vogais = ['a', 'e', 'i', 'o', 'u'];
   for (var c in texto) {
     for (i in vogais) {
         if (texto[c] === vogais[i]) {
